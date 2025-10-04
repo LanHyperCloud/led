@@ -1,0 +1,20 @@
+[package]
+name = "esp-led"
+version = "0.1.0"
+edition = "2021"
+authors = ["LanHyperCloud"]
+description = "ESP32 LED control library with embassy executor support"
+license = "MIT"
+repository = "https://github.com/LanHyperCloud/led"
+keywords = ["esp32", "led", "embassy", "embedded"]
+categories = ["embedded", "hardware-support"]
+
+[dependencies]
+embassy-executor = { version = "0.7.0", optional = true }
+embassy-time = { version = "0.5.0", optional = true }
+esp-hal = { version = "=1.0.0-rc.0", optional = true }
+esp-println = { version = "0.15.0", optional = true }
+
+[features]
+default = ["embassy"]
+embassy = ["embassy-executor", "embassy-time", "esp-hal", "esp-println"]
